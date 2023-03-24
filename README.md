@@ -1,15 +1,13 @@
-# ext-name
+# UNLP
 
-<a href="https://marketplace.visualstudio.com/items?itemName=antfu.ext-name" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/antfu.ext-name.svg?color=eee&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
+Paquete de utilidades para la UNLP (Facultad de Ingeniería e Informática)
 
-## Sponsors
+<a href="https://marketplace.visualstudio.com/items?itemName=juanm04.unlp" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/juanm04.unlp.svg?color=eee&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
 
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/antfu/static/sponsors.png'/>
-  </a>
-</p>
+## Utilidades
 
-## License
+- TODO
 
-[MIT](./LICENSE) License © 2022 [Anthony Fu](https://github.com/antfu)
+## Licencia
+
+[MIT](./LICENSE) License © 2023 [Juan Martín Seery](https://github.com/JuanM04)
