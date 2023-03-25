@@ -1,9 +1,9 @@
-import { window } from 'vscode'
+// import { window } from 'vscode'
 
-export function activate() {
-  window.showInformationMessage('Hello')
-}
+// export function activate() {
+//   window.showInformationMessage('Hello')
+// }
 
-export function deactivate() {
+// export function deactivate() {
 
-}
+// }
