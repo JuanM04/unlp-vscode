@@ -88,11 +88,10 @@
     "dev": "pnpm build --watch",
     "lint": "eslint .",
     "vscode:prepublish": "pnpm build",
-    "publish": "vsce publish --no-dependencies",
     "pack": "vsce package --no-dependencies",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "release": "bumpp && pnpm publish"
+    "release": "bumpp"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.37.0",
