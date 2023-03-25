@@ -70,9 +70,29 @@
         "path": "./syntaxes/r-info.tmLanguage.json"
       },
       {
+        "scopeName": "markdown.r-info.codeblock",
+        "path": "./syntaxes/r-info.injection.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.r-info": "r-info"
+        }
+      },
+      {
         "language": "vonsim",
         "scopeName": "source.asm.vonsim",
         "path": "./syntaxes/vonsim.tmLanguage.json"
+      },
+      {
+        "scopeName": "markdown.asm.vonsim.codeblock",
+        "path": "./syntaxes/vonsim.injection.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.asm.vonsim": "vonsim"
+        }
       }
     ],
     "snippets": [

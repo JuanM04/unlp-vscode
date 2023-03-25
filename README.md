@@ -8,6 +8,7 @@ Paquete de utilidades para la UNLP (Facultad de Ingeniería e Informática)
 
 - Soporte para R-Info (archivos `.ri` y `.rinfo`)
 - Soporte para [VonSim](https://vonsim.github.io) y MSX88 (archivos `.vonsim` y `.asm`)
+- Integración con Markdown (`rinfo` y `vonsim`)
 
 ## Licencia
 
