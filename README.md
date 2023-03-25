@@ -6,7 +6,7 @@ Paquete de utilidades para la UNLP (Facultad de Ingeniería e Informática)
 
 ## Utilidades
 
-- TODO
+- Soporte para R-Info (archivos `.ri` y `.rinfo`)
 
 ## Licencia
 

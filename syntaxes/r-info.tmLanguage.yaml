@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json
+
+name: R-Info
+scopeName: source.r-info
+uuid: e34ddfaf-9aee-4e84-a281-04eec3608111
+fileTypes:
+  - "ri"
+  - "rinfo"
+
+patterns:
+  - name: keyword.control.r-info
+    match: \b(si(no)?|mientras|repetir)\b
+
+  - name: keyword.other.r-info
+    match: \b(programa|procesos?|robots?|areas|variables|comenzar|fin)\b
+
+  - name: entity.name.function.r-info
+    match: \b(mover|derecha|(tomar|depositar)(Flor|Papel)|(Bloquear|Liberar)Esquina|(Enviar|Recibir)Mensaje|Pos|Informar|Leer|Iniciar|AsignarArea)\b
+
+  - name: entity.name.class.r-info
+    match: \b(Hay(Flor|Papel)EnLa(Bolsa|Esquina)|Pos(Ca|Av))\b
+
+  - name: storage.modifier.r-info
+    match: \bArea(P|C|PC)\b
+
+  - name: storage.modifier.r-info
+    match: \b(V|F)\b
+
+  - name: entity.name.type.r-info
+    match: \b(boolean|numero)\b
+
+  - name: variable.parameter.type.r-info
+    match: \b(ES|E|S)\b
+
+  - name: keyword.operator.arithmetic.r-info
+    match: \+|-|\*|/
+
+  - name: keyword.operator.comparison.r-info
+    match: <|>|<=|>=|=|<>|!=
+
+  - name: keyword.operator.assign.r-info
+    match: :=
+
+  - name: keyword.operator.logical.r-info
+    match: ~|&
+
+  - name: comment.r-info
+    begin: "{"
+    end: "}"
+
+  - match: (-)?(?:((?:\b\d+(?:\.\d*)?|\.\d+)(?:\b|e-?\d+\b)%?)|(\$[0-9]+\b))
+    captures:
+      1: { name: keyword.operator.arithmetic.r-info }
+      2: { name: constant.numeric.decimal.r-info }
+      3: { name: constant.numeric.hex.r-info }
