@@ -22,12 +22,12 @@
     "Education",
     "Other"
   ],
+  "main": "./dist/index.js",
   "icon": "static/icon.png",
   "galleryBanner": {
     "color": "#00585F",
     "theme": "dark"
   },
-  "main": "./dist/index.js",
   "files": [
     "dist"
   ],
@@ -86,7 +86,7 @@
     "build": "tsup src/index.ts --external vscode",
     "build:grammars": "tsx scripts/build-grammars.ts",
     "dev": "pnpm build --watch",
-    "lint": "eslint .",
+    "lint": "eslint . --ignore-path .gitignore",
     "vscode:prepublish": "pnpm build",
     "pack": "vsce package --no-dependencies",
     "test": "vitest",

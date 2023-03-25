@@ -50,6 +50,6 @@ patterns:
 
   - match: (-)?(?:((?:\b\d+(?:\.\d*)?|\.\d+)(?:\b|e-?\d+\b)%?)|(\$[0-9]+\b))
     captures:
-      1: { name: keyword.operator.arithmetic.r-info }
-      2: { name: constant.numeric.decimal.r-info }
-      3: { name: constant.numeric.hex.r-info }
+      1: {name: keyword.operator.arithmetic.r-info}
+      2: {name: constant.numeric.decimal.r-info}
+      3: {name: constant.numeric.hex.r-info}

@@ -1,3 +1,8 @@
 {
-  "extends": "@antfu"
+  "root": true,
+  "extends": "@antfu",
+  "rules": {
+    "yml/plain-scalar": "off",
+    "yml/quotes": "off"
+  }
 }
