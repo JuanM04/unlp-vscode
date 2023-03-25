@@ -43,6 +43,17 @@
           ".rinfo"
         ],
         "configuration": "./syntaxes/r-info.configuration.json"
+      },
+      {
+        "id": "vonsim",
+        "aliases": [
+          "VonSim"
+        ],
+        "extensions": [
+          ".vonsim",
+          ".asm"
+        ],
+        "configuration": "./syntaxes/vonsim.configuration.json"
       }
     ],
     "grammars": [
@@ -50,6 +61,11 @@
         "language": "r-info",
         "scopeName": "source.r-info",
         "path": "./syntaxes/r-info.tmLanguage.json"
+      },
+      {
+        "language": "vonsim",
+        "scopeName": "source.asm.vonsim",
+        "path": "./syntaxes/vonsim.tmLanguage.json"
       }
     ],
     "snippets": [
