@@ -17,10 +17,17 @@
     "url": "https://github.com/JuanM04/unlp-vscode/issues"
   },
   "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Education",
     "Other"
   ],
+  "icon": "static/icon.png",
+  "galleryBanner": {
+    "color": "#00585F",
+    "theme": "dark"
+  },
   "main": "./dist/index.js",
-  "icon": "res/icon.png",
   "files": [
     "dist"
   ],
