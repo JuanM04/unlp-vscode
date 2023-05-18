@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json
 
-scopeName: markdown.r-info.codeblock
+scopeName: text.html.markdown.r-info.codeblock
 injectionSelector: L:text.html.markdown
 patterns:
   - name: markup.fenced_code.block.markdown
