@@ -2,7 +2,7 @@
   "publisher": "juanm04",
   "name": "unlp",
   "displayName": "UNLP",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "private": true,
   "packageManager": "pnpm@7.30.0",
   "description": "Paquete de utilidades para la UNLP (Facultad de Ingeniería e Informática)",
