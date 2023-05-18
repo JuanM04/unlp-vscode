@@ -61,6 +61,17 @@
           ".asm"
         ],
         "configuration": "./syntaxes/vonsim.configuration.json"
+      },
+      {
+        "id": "mips",
+        "aliases": [
+          "MIPS"
+        ],
+        "extensions": [
+          ".mips",
+          ".s"
+        ],
+        "configuration": "./syntaxes/mips.configuration.json"
       }
     ],
     "grammars": [
@@ -92,6 +103,21 @@
         ],
         "embeddedLanguages": {
           "meta.embedded.block.asm.vonsim": "vonsim"
+        }
+      },
+      {
+        "language": "mips",
+        "scopeName": "source.asm.mips",
+        "path": "./syntaxes/mips.tmLanguage.json"
+      },
+      {
+        "scopeName": "text.html.markdown.asm.mips.codeblock",
+        "path": "./syntaxes/mips.injection.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.asm.mips": "mips"
         }
       }
     ],

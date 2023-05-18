@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json
+
+name: MIPS
+scopeName: source.asm.mips
+uuid: 6eadd4ba-6951-41ae-a96a-aa0229491f2d
+fileTypes:
+  - "mips"
+  - "s"
+
+patterns:
+  - name: comment.line.asm.mips
+    match: ;.*
+  
+  - name: entity.name.function.asm.mips
+    match: (?i)(\.(data|text|code|org|align))\b
+  
+  - name: storage.type.asm.mips
+    match: (?i)(\.(space|asciiz?|byte|word(16|32)?|double))\b
+  
+  - name: keyword.control.asm.mips
+    match: (?i)\b(beqz?|bnez?|j(al)?r?|bc1[ft])\b
+  
+  - name: storage.modifier.asm.mips
+    match: (?i)\b(l\.?d|l[bhw]u?|lui|s\.?d|s[bhw]|m[tf]c1|mov(\.d|z|n))\b
+  
+  - name: keyword.operator.word.asm.mips
+    match: (?i)\b(daddu?i?|andi?|x?ori?|d(sub|mul|div)u?|slti?u?|ds(ll|rl|ra)v?|(add|sub|mul|div)\.d|cvt\.d\.l|cvt\.l\.d|c\.(lt|le|eq)\.d|nop|halt)\b
+
+  - name: variable.language.asm.mips
+    match: (?i)\b([rf](\d|[12]\d|3[01]))\b
+  
+  - match: (?i)(?:(\$)(\d|[12]\d|3[01]|zero|at|gp|sp|fp|ra|[kv][01]|a[0-3]|s[0-7]|t[0-9]))\b
+    captures:
+      1: {name: punctuation.asm.mips}
+      2: {name: variable.language.asm.mips}
+      
+  - name: constant.numeric.integer.hexadecimal.asm.mips
+    match: (?i)\b(0x[\da-f]+)\b
+
+  - name: constant.numeric.integer.binary.asm.mips
+    match: (?i)\b(0b[01]+)\b
+
+  - name: constant.numeric.integer.decimal.asm.mips
+    match: \b((\d*\.)?\d+)\b
+  
+  - name: punctuation.asm.mips
+    match: ([\(\),])
+
+  - name: string.quoted.double.asm.mips
+    begin: '"'
+    end: '"'
+    patterns:
+      - name: constant.character.escape.asm.mips
+        match: \\\.
