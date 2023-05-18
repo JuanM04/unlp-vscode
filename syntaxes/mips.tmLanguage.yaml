@@ -41,7 +41,8 @@ patterns:
     match: (?i)\b(0b[01]+)\b
 
   - name: constant.numeric.integer.decimal.asm.mips
-    match: \b((\d*\.)?\d+)\b
+    match: (?:(?=[-.\d])(?<![\w\.-]))-?\d*\.?\d+\b
+    #      ^^^^^^^^^^^^^^^^^^^^^^^^^^ Custom word boundary
 
   - name: punctuation.asm.mips
     match: ([\(\),])
