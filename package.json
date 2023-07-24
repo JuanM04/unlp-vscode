@@ -22,6 +22,17 @@
     "Education",
     "Other"
   ],
+  "keywords": [
+    "asm",
+    "assembly",
+    "mips",
+    "vonsim",
+    "r-info",
+    "rinfo",
+    "unlp",
+    "universidad nacional de la plata",
+    "argentina"
+  ],
   "main": "./dist/index.js",
   "icon": "static/icon.png",
   "galleryBanner": {
