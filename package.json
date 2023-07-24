@@ -4,7 +4,7 @@
   "displayName": "UNLP",
   "version": "0.2.1",
   "private": true,
-  "packageManager": "pnpm@7.30.0",
+  "packageManager": "pnpm@8.6.9",
   "description": "Paquete de utilidades para la UNLP (Facultad de Ingeniería e Informática)",
   "author": "Juan Martín Seery <me@juanm04.com>",
   "license": "MIT",
@@ -140,19 +140,18 @@
     "release": "bumpp"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.37.0",
+    "@antfu/eslint-config": "^0.39.8",
     "@types/js-yaml": "^4.0.5",
-    "@types/node": "^18.6.4",
+    "@types/node": "^18.17.0",
     "@types/vscode": "^1.69.0",
-    "bumpp": "^9.0.0",
-    "eslint": "^8.21.0",
-    "globby": "^13.1.3",
+    "bumpp": "^9.1.1",
+    "eslint": "^8.45.0",
+    "globby": "^13.2.2",
     "js-yaml": "^4.1.0",
-    "rimraf": "^4.4.1",
-    "tsup": "^6.2.1",
-    "tsx": "^3.12.6",
-    "typescript": "^5.0.2",
-    "vite": "^4.2.1",
-    "vitest": "^0.29.7"
+    "tsup": "^7.1.0",
+    "tsx": "^3.12.7",
+    "typescript": "~5.1.6",
+    "vite": "^4.4.7",
+    "vitest": "^0.33.0"
   }
 }
