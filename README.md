@@ -11,6 +11,8 @@ Paquete de utilidades para la UNLP (Facultad de Ingeniería e Informática)
 - Soporte para [WinMIPS64](http://indigo.ie/~mscott/) (archivos `.mips` y `.s`)
 - Integración con Markdown (`rinfo`, `vonsim` y `mips`)
 
+[**¡Contribuí con el proyecto!**](https://github.com/JuanM04/unlp-vscode/blob/main/CONTRIBUTING.md)
+
 ## Licencia
 
 [MIT](./LICENSE) License © 2023 [Juan Martín Seery](https://github.com/JuanM04)
