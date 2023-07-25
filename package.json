@@ -23,6 +23,9 @@
     "Other"
   ],
   "keywords": [
+    "pascal",
+    "free pascal",
+    "fpc",
     "asm",
     "assembly",
     "mips",
@@ -50,6 +53,27 @@
   ],
   "contributes": {
     "languages": [
+      {
+        "id": "pascal",
+        "aliases": [
+          "Pascal",
+          "Free Pascal",
+          "FPC",
+          "pascal",
+          "free pascal",
+          "fpc"
+        ],
+        "extensions": [
+          ".pas",
+          ".pp",
+          ".dfm",
+          ".dpr",
+          ".dpk",
+          ".lfm",
+          ".lpr"
+        ],
+        "configuration": "./syntaxes/pascal.configuration.json"
+      },
       {
         "id": "r-info",
         "aliases": [
@@ -86,6 +110,21 @@
       }
     ],
     "grammars": [
+      {
+        "language": "pascal",
+        "scopeName": "source.pascal",
+        "path": "./syntaxes/pascal.tmLanguage.json"
+      },
+      {
+        "scopeName": "text.html.markdown.pascal.codeblock",
+        "path": "./syntaxes/pascal.injection.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.pascal": "pascal"
+        }
+      },
       {
         "language": "r-info",
         "scopeName": "source.r-info",
@@ -133,6 +172,10 @@
       }
     ],
     "snippets": [
+      {
+        "language": "pascal",
+        "path": "./snippets/pascal.code-snippets.json"
+      },
       {
         "language": "r-info",
         "path": "./snippets/r-info.code-snippets.json"

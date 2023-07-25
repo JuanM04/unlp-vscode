@@ -1,0 +1,149 @@
+# Based on https://github.com/ALANVF/vscode-pascal-magic/blob/65bcbdf003a84fe31a604b95bcab5a0ea3b802b6/snippets/pascal.json
+# Copyright (c) 2020 theangryepicbanana - MIT License
+
+"begin...end":
+  prefix: begin
+  description: bloque begin...end
+  body: |-
+    begin
+      $0
+    end;
+
+"programa":
+  prefix: programa
+  description: Programa básico
+  isFileTemplate: true
+  body: |
+    program ${1:nombrePrograma};
+
+    type
+      {Tipos}
+
+    var
+      {Variables}
+
+    begin
+      ${0:{Programa principal}}
+    end.
+
+"case...end":
+  prefix: caseof
+  description: Directiva case
+  body: |-
+    case $1 of
+      $0
+    end;
+
+"registro (vacío)":
+  prefix: recorde
+  body: |-
+    T$1 = record
+      $0
+    end;
+
+"objeto (base)":
+  prefix: objectb
+  body: |-
+    T$1 = object
+      $0
+    end;
+
+"objeto (derivado)":
+  prefix: objectd
+  body: |-
+    T$1 = object($2)
+      $0
+    end;
+
+"clase (base)":
+  prefix: classb
+  body: |-
+    T$1 = class
+      $0
+    end;
+
+"clase (derivada)":
+  prefix: classd
+  body: |-
+    T$1 = class($2)
+      $0
+    end;
+
+"interfaz (base)":
+  prefix: interfaceb
+  body: |-
+    T$1 = interface
+      $0
+    end;
+
+"interfaz (derivada)":
+  prefix: interfaced
+  body: |-
+    T$1 = interface($2)
+      $0
+    end;
+
+"procedimiento":
+  prefix: procd
+  description: Declaración de un procedimiento
+  body: "procedure ${1:name}($2);$0"
+
+"procedimiento de clase":
+  prefix: cprocd
+  description: Declaración de un procedimiento de clase
+  body: "class procedure ${1:name}($2);$0"
+
+"función":
+  prefix: funcd
+  description: Declaración de una función
+  body: "function ${1:name}($2): ${3:return};$0"
+
+"función de clase":
+  prefix: cfuncd
+  description: Declaración de una función de clase
+  body: "class function ${1:name}($2): ${3:return};$0"
+
+"operador":
+  prefix: operd
+  description: Declaración de un operador
+  body: "operator ${1:name}($2): ${3:return};$0"
+
+"operador de clase":
+  prefix: coperd
+  description: Declaración de un operador de clase
+  body: "class operator ${1:name}($2);$0"
+
+"constructor":
+  prefix: ctord
+  description: Declaración de un constructor
+  body: "constructor ${1:name}($2);$0"
+
+"constructor de clase":
+  prefix: cctord
+  description: Declaración de un constructor de clase
+  body: "class constructor ${1:name}($2);$0"
+
+"destructor":
+  prefix: dtord
+  description: Declaración de un destructor
+  body: "destructor ${1:name};$0"
+
+"destructor por defector":
+  prefix: ddtord
+  description: Declaración del destructor por defecto
+  body: "destructor destroy; override;$0"
+
+"unidad":
+  prefix: unitb
+  description: Declaración de una unidad
+  isFileTemplate: true
+  body: |
+    unit ${1:unitName};
+
+    interface
+
+    $0
+
+    implementation
+
+    end.

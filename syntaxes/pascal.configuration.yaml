@@ -1,0 +1,25 @@
+# Based on https://github.com/ALANVF/vscode-pascal-magic/blob/65bcbdf003a84fe31a604b95bcab5a0ea3b802b6/language-configuration.json
+# Copyright (c) 2020 theangryepicbanana - MIT License
+
+comments:
+  lineComment: "//"
+  blockComment: ['\{', '\}']
+
+brackets:
+  - ["(", ")"]
+  - ["[", "]"]
+  - ["{", "}"]
+
+autoClosingPairs:
+  - ["(", ")"]
+  - ["[", "]"]
+  - ["{", "}"]
+  - ["'", "'"]
+
+surroundingPairs:
+  - ["(", ")"]
+  - ["[", "]"]
+  - ["{", "}"]
+  - ["'", "'"]
+
+wordPattern: '&?[a-zA-Z_]\w*'
