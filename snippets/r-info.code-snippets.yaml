@@ -2,7 +2,7 @@
   prefix: "comenzar"
   body: |-
     comenzar
-      $1
+      $0
     fin
 
 "Programa básico":
@@ -16,7 +16,7 @@
     robots
       robot robot1
       comenzar
-        $2
+        $0
       fin
     variables
       Rinfo: robot1
@@ -33,7 +33,7 @@
     variables
       $2
     comenzar
-      $3
+      $0
     fin
 
 "Proceso":
@@ -44,5 +44,5 @@
     variables
       $2
     comenzar
-      $3
+      $0
     fin
