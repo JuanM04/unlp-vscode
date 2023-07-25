@@ -14,6 +14,12 @@ Paquete de utilidades para la UNLP (Facultad de Ingeniería e Informática)
 
 [**¡Contribuí con el proyecto!**](https://github.com/JuanM04/unlp-vscode/blob/main/CONTRIBUTING.md)
 
+### Nota sobre Pascal
+
+Para ejecutar programas Pascal, se recomienda utilizar [Free Pascal](https://www.freepascal.org/). Se puede instalar fácilmente descargando el instalador desde su [sitio web](https://www.freepascal.org/download.html) (para ver un tutorial detallado en inglés, [consultar la documentación](https://wiki.freepascal.org/Installing_the_Free_Pascal_Compiler)).
+
+Una vez instalado, se pueden compilar los programas corriendo `fpc mi_programa.pas` desde la terminal. Esto generará un archivo ejecutable llamado `mi_programa` (o `mi_programa.exe` en Windows). Para ejecutarlo, simplemente correr `./mi_programa` (o `mi_programa.exe` en Windows). También existe el atajo `instantfpc mi_programa.pas` que compila y ejecuta el programa en un solo paso.
+
 ## Licencia
 
 Copyright © 2023 [Juan Martín Seery](https://github.com/JuanM04), bajo la licencia [MIT](https://github.com/JuanM04/unlp-vscode/blob/main/LICENSE).
