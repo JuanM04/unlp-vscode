@@ -35,15 +35,15 @@ repository:
       - include: "#empty"
       - begin: '&?[a-zA-Z_]\w*(?=\s*(?:(?:\(\*(?:\*+(?!\))|[^*]+)*\*\)|\{[^\{\}]*\})\s*)*:(?!=))'
         beginCaptures:
-          0: { name: variable.property.pascal }
+          0: {name: variable.property.pascal}
         end: ';|(?=\))'
         endCaptures:
-          0: { name: punctuation.terminator.pascal }
+          0: {name: punctuation.terminator.pascal}
         patterns:
           - include: "#empty"
           - begin: ":(?!=)"
             beginCaptures:
-              0: { name: operator.pascal }
+              0: {name: operator.pascal}
             end: "(?=[;)])"
             patterns:
               - include: "#empty"
@@ -62,10 +62,10 @@ repository:
   const-exprs.record-or-array:
     begin: '\('
     beginCaptures:
-      0: { name: punctuation.definition.paren.begin.pascal }
+      0: {name: punctuation.definition.paren.begin.pascal}
     end: '\)'
     endCaptures:
-      0: { name: punctuation.definition.paren.end.pascal }
+      0: {name: punctuation.definition.paren.end.pascal}
     patterns:
       - include: "#empty"
       - begin: '(?=&?[a-zA-Z_]\w*\s*(?:(?:\(\*(?:\*+(?!\))|[^*]+)*\*\)|\{[^\{\}]*\})\s*)*:(?!=))'
@@ -92,8 +92,8 @@ repository:
   exprs.call-generic-fn:
     begin: '((?<=\b)(?<!&)specialize\s+)(&?[a-zA-Z_]\w*(?=<\S))'
     beginCaptures:
-      1: { name: keyword.pascal }
-      2: { name: entity.name.function.pascal }
+      1: {name: keyword.pascal}
+      2: {name: entity.name.function.pascal}
     end: "(?<=>)"
     patterns:
       - include: "#generic-args"
@@ -142,8 +142,8 @@ repository:
       - include: "#keywords"
       - match: '(&?[a-zA-Z_]\w*|\d+)\s*(:(?!=))' # why not use label?
         captures:
-          1: { name: variable.label.pascal }
-          2: { name: keyword.operator.pascal }
+          1: {name: variable.label.pascal}
+          2: {name: keyword.operator.pascal}
       - include: "#exprs"
 
   space:
@@ -161,10 +161,10 @@ repository:
   block-comment.parens:
     begin: '\(\*'
     beginCaptures:
-      0: { name: comment.pascal }
+      0: {name: comment.pascal}
     end: '\*\)'
     endCaptures:
-      0: { name: comment.pascal }
+      0: {name: comment.pascal}
     patterns:
       - include: "#block-comment.parens"
       - match: "[^*]+"
@@ -175,10 +175,10 @@ repository:
   block-comment.braces:
     begin: '\{'
     beginCaptures:
-      0: { name: comment.pascal }
+      0: {name: comment.pascal}
     end: '\}'
     endCaptures:
-      0: { name: comment.pascal }
+      0: {name: comment.pascal}
     patterns:
       - include: "#block-comment.braces"
       - match: "[^{}]+"
@@ -188,10 +188,10 @@ repository:
     patterns:
       - begin: '\(\*(?!\$)'
         beginCaptures:
-          0: { name: comment.pascal }
+          0: {name: comment.pascal}
         end: '\*\)'
         endCaptures:
-          0: { name: comment.pascal }
+          0: {name: comment.pascal}
         patterns:
           - include: "#block-comment.parens"
           - match: "[^(*]+"
@@ -200,10 +200,10 @@ repository:
             name: comment.pascal
       - begin: '\{(?!\$)'
         beginCaptures:
-          0: { name: comment.pascal }
+          0: {name: comment.pascal}
         end: '\}'
         endCaptures:
-          0: { name: comment.pascal }
+          0: {name: comment.pascal}
         patterns:
           - include: "#block-comment.braces"
           - match: "[^{}]+"
@@ -213,11 +213,11 @@ repository:
     patterns:
       - begin: '(\(\*)(\$\w+)'
         beginCaptures:
-          1: { name: comment.pascal }
-          2: { name: keyword.other.pascal }
+          1: {name: comment.pascal}
+          2: {name: keyword.other.pascal}
         end: '\*\)'
         endCaptures:
-          0: { name: comment.pascal }
+          0: {name: comment.pascal}
         patterns:
           - include: "#block-comment.paren"
           - match: "[^(*]+"
@@ -226,12 +226,12 @@ repository:
             name: comment.pascal
       - begin: '(\{)(\$\w+)([+\-]?)'
         beginCaptures:
-          1: { name: comment.pascal }
-          2: { name: keyword.other.pascal }
-          3: { name: keyword.operator.pascal }
+          1: {name: comment.pascal}
+          2: {name: keyword.other.pascal}
+          3: {name: keyword.operator.pascal}
         end: '\}'
         endCaptures:
-          0: { name: comment.pascal }
+          0: {name: comment.pascal}
         patterns:
           - include: "#block-comment.braces"
           - match: "[^{}]+"
@@ -264,8 +264,8 @@ repository:
   label:
     match: '(?<=^\s*)(&?\w+)\s*(:(?!=))'
     captures:
-      1: { name: variable.label.pascal }
-      2: { name: keyword.operator.pascal }
+      1: {name: variable.label.pascal}
+      2: {name: keyword.operator.pascal}
 
   builtins.intrinsic:
     match: |-
@@ -328,10 +328,10 @@ repository:
   constants.string:
     begin: "'"
     beginCaptures:
-      0: { name: string.pascal }
+      0: {name: string.pascal}
     end: "'(?!')"
     endCaptures:
-      0: { name: string.pascal }
+      0: {name: string.pascal}
     patterns:
       - match: "''"
         name: constant.escape.pascal
@@ -376,19 +376,19 @@ repository:
           )
           (?=\s*;)
         captures:
-          1: { name: punctuation.terminator.pascal }
-          2: { name: keyword.modifier.pascal }
+          1: {name: punctuation.terminator.pascal}
+          2: {name: keyword.modifier.pascal}
 
       - begin: '(?i)(;)\s*(alias)(?=\b)'
         beginCaptures:
-          1: { name: punctuation.terminator.pascal }
-          2: { name: keyword.modifier.pascal }
+          1: {name: punctuation.terminator.pascal}
+          2: {name: keyword.modifier.pascal}
         end: "(?=;)"
         patterns:
           - include: "#empty"
           - begin: ":"
             beginCaptures:
-              0: { name: operator.pascal }
+              0: {name: operator.pascal}
             end: "(?=;)"
             patterns:
               - include: "#empty"
@@ -398,14 +398,14 @@ repository:
 
       - begin: '(?i)(;)\s*(public)(?=\b)'
         beginCaptures:
-          1: { name: punctuation.terminator.pascal }
-          2: { name: keyword.modifier.pascal }
+          1: {name: punctuation.terminator.pascal}
+          2: {name: keyword.modifier.pascal}
         end: "(?=;)"
         patterns:
           - include: "#empty"
           - begin: '(?i)name(?=\b)'
             beginCaptures:
-              0: { name: keyword.modifier.pascal }
+              0: {name: keyword.modifier.pascal}
             end: "(?=;)"
             patterns:
               - include: "#empty"
@@ -415,8 +415,8 @@ repository:
 
       - begin: '(?i)(;)\s*(message)(?=\b)'
         beginCaptures:
-          1: { name: punctuation.terminator.pascal }
-          2: { name: keyword.modifier.pascal }
+          1: {name: punctuation.terminator.pascal}
+          2: {name: keyword.modifier.pascal}
         end: "(?=;)"
         patterns:
           - include: "#empty"
@@ -425,15 +425,15 @@ repository:
 
       - begin: '(?i)(;)\s*(external)(?=\b)'
         beginCaptures:
-          1: { name: punctuation.terminator.pascal }
-          2: { name: keyword.modifier.pascal }
+          1: {name: punctuation.terminator.pascal}
+          2: {name: keyword.modifier.pascal}
         end: "(?=;)"
         patterns:
           - include: "#empty"
           - include: "#constants.string"
           - begin: '(?i)name(?=\b)'
             beginCaptures:
-              0: { name: keyword.modifier.pascal }
+              0: {name: keyword.modifier.pascal}
             end: "(?=;)"
             patterns:
               - include: "#empty"
@@ -441,10 +441,10 @@ repository:
               - include: "#invalid"
           - begin: '(?i)index(?=\b)'
             beginCaptures:
-              0: { name: keyword.modifier.pascal }
+              0: {name: keyword.modifier.pascal}
             end: '\d+'
             endCaptures:
-              0: { name: constant.numeric.pascal }
+              0: {name: constant.numeric.pascal}
             patterns:
               - include: "#empty"
               - include: "#invalid"
@@ -454,7 +454,7 @@ repository:
     patterns:
       - begin: '(?i)(?<=\b)((?:(?:class|generic)\s+)?(?:function|procedure|(?:con|de)structor))\s+(?=&?[a-zA-Z_]\w*)'
         beginCaptures:
-          1: { name: keyword.pascal }
+          1: {name: keyword.pascal}
         end: |-
           (?xi);(?!\s*(?:
             static|virtual|abstract|dynamic|reintroduce|override
@@ -475,19 +475,19 @@ repository:
             |winapi
           )(?=\b))
         endCaptures:
-          0: { name: punctuation.terminator.pascal }
+          0: {name: punctuation.terminator.pascal}
         # basic generics for now
         patterns:
           - include: "#empty"
 
           - match: '(&?[a-zA-Z_]\w*)(\.)'
             captures:
-              1: { name: entity.name.type.pascal }
-              2: { name: operator.pascal }
+              1: {name: entity.name.type.pascal}
+              2: {name: operator.pascal}
 
           - begin: '&?[a-zA-Z_]\w*(?=<.+?>\s*[(:])'
             beginCaptures:
-              0: { name: entity.name.function.pascal }
+              0: {name: entity.name.function.pascal}
             end: "(?<=>)"
             patterns:
               - include: "#generic-params"
@@ -495,10 +495,10 @@ repository:
 
           - begin: '&?[a-zA-Z_]\w*(?=<)'
             beginCaptures:
-              0: { name: entity.name.type.pascal }
+              0: {name: entity.name.type.pascal}
             end: '(?<=>)\.'
             endCaptures:
-              0: { name: operator.pascal }
+              0: {name: operator.pascal}
             patterns:
               - include: "#generic-args"
               - include: "#invalid"
@@ -575,13 +575,13 @@ repository:
             patterns:
               - match: '([a-zA-Z_]\w*)(\.)'
                 captures:
-                  1: { name: entity.name.type.pascal }
-                  2: { name: operator.pascal }
+                  1: {name: entity.name.type.pascal}
+                  2: {name: operator.pascal}
           3:
             name: entity.name.function.pascal
         end: ";"
         endCaptures:
-          0: { name: punctuation.terminator.pascal }
+          0: {name: punctuation.terminator.pascal}
         patterns:
           - include: "#empty"
           - include: "#routine-params"
@@ -590,10 +590,10 @@ repository:
   routine-params:
     begin: '\('
     beginCaptures:
-      0: { name: punctuation.definition.parameters.begin.pascal }
+      0: {name: punctuation.definition.parameters.begin.pascal}
     end: '\)'
     endCaptures:
-      0: { name: punctuation.definition.parameters.end.pascal }
+      0: {name: punctuation.definition.parameters.end.pascal}
     patterns:
       - include: "#empty"
       - include: "#comma"
@@ -604,12 +604,12 @@ repository:
         name: variable.parameter.pascal
       - match: '(?i)(:)\s*(array\s+of\s+const)(?=\s*[;)])'
         captures:
-          1: { name: operator.pascal }
-          2: { name: keyword.pascal }
+          1: {name: operator.pascal}
+          2: {name: keyword.pascal}
       - include: "#type-anno"
       - begin: "="
         beginCaptures:
-          0: { name: operator.pascal }
+          0: {name: operator.pascal}
         end: '(?=\s*[;)])'
         patterns:
           - include: "#empty"
@@ -619,8 +619,8 @@ repository:
   routine-return:
     begin: '((?:&?[a-zA-Z_]\w*\s*)?)(:)'
     beginCaptures:
-      1: { name: variable.pascal }
-      2: { name: operator.pascal }
+      1: {name: variable.pascal}
+      2: {name: operator.pascal}
     end: "(?=;)"
     patterns:
       - include: "#empty"
@@ -668,10 +668,10 @@ repository:
   paren:
     begin: '\('
     beginCaptures:
-      0: { name: punctuation.definition.paren.begin.pascal }
+      0: {name: punctuation.definition.paren.begin.pascal}
     end: '\)'
     endCaptures:
-      0: { name: punctuation.definition.paren.end.pascal }
+      0: {name: punctuation.definition.paren.end.pascal}
     patterns:
       - include: "#empty"
       - include: "#comma"
@@ -681,10 +681,10 @@ repository:
   subscript:
     begin: '\['
     beginCaptures:
-      0: { name: punctuation.definition.subscript.begin.pascal }
+      0: {name: punctuation.definition.subscript.begin.pascal}
     end: '\]'
     endCaptures:
-      0: { name: punctuation.definition.subscript.end.pascal }
+      0: {name: punctuation.definition.subscript.end.pascal}
     patterns:
       - include: "#empty"
       - include: "#exprs"
@@ -713,7 +713,7 @@ repository:
   type-anno:
     begin: ":(?!=)"
     beginCaptures:
-      0: { name: operator.pascal }
+      0: {name: operator.pascal}
     end: '(?<!:\s*)(?!<)'
     patterns:
       - include: "#empty"
@@ -728,10 +728,10 @@ repository:
   case-of:
     begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)case(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)end(?=\b)'
     endCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     patterns:
       - include: "#empty"
       - include: "#semicolon"
@@ -748,10 +748,10 @@ repository:
   try-except-finally:
     begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)try(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)end(?=\b)'
     endCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     patterns:
       - include: "#empty"
       - include: "#semicolon"
@@ -771,10 +771,10 @@ repository:
   block:
     begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)begin(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)end(?=\b)'
     endCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     patterns:
       - include: "#empty"
       - include: "#semicolon"
@@ -789,7 +789,7 @@ repository:
       - include: "#exprs"
       - include: "#invalid"
 
-  #== ASM ==
+  # == ASM ==
 
   asm.register.special:
     match: |-
@@ -831,10 +831,10 @@ repository:
   asm.paren:
     begin: '\('
     beginCaptures:
-      0: { name: punctuation.definition.paren.begin.pascal }
+      0: {name: punctuation.definition.paren.begin.pascal}
     end: '\)'
     endCaptures:
-      0: { name: punctuation.definition.paren.end.pascal }
+      0: {name: punctuation.definition.paren.end.pascal}
     patterns:
       - include: "#empty"
       - include: "#asm.expr"
@@ -843,10 +843,10 @@ repository:
   asm.subscript:
     begin: '\['
     beginCaptures:
-      0: { name: punctuation.definition.subscript.begin.pascal }
+      0: {name: punctuation.definition.subscript.begin.pascal}
     end: '\]'
     endCaptures:
-      0: { name: punctuation.definition.subscript.end.pascal }
+      0: {name: punctuation.definition.subscript.end.pascal}
     patterns:
       - include: "#empty"
       - include: "#asm.expr"
@@ -868,7 +868,7 @@ repository:
   asm.command:
     begin: '(?<=^\s*)([a-zA-Z_]\w*)(?!\s*:)(?=\b)'
     beginCaptures:
-      1: { name: keyword.pascal }
+      1: {name: keyword.pascal}
     end: "$"
     patterns:
       - include: "#empty"
@@ -878,16 +878,16 @@ repository:
   asm.func-label:
     match: '(?<=^\s*)(\.[a-zA-Z_]\w*)\s*(:(?!=))'
     captures:
-      1: { name: entity.name.function.pascal }
-      2: { name: keyword.operator.pascal }
+      1: {name: entity.name.function.pascal}
+      2: {name: keyword.operator.pascal}
 
   asm:
     begin: '(?i)(?<=\b)asm(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)end(?=\b)'
     endCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     patterns:
       - include: "#empty"
       - include: "#asm.command"
@@ -896,15 +896,15 @@ repository:
       # ...
       - include: "#invalid"
 
-  #== TYPES ==
+  # == TYPES ==
 
   generic-args:
     begin: '(?<=\w)<(?!\s*[=<>(])'
     beginCaptures:
-      0: { name: punctuation.definition.args.begin.pascal }
+      0: {name: punctuation.definition.args.begin.pascal}
     end: ">"
     endCaptures:
-      0: { name: punctuation.definition.args.end.pascal }
+      0: {name: punctuation.definition.args.end.pascal}
     patterns:
       - include: "#empty"
       - include: "#comma"
@@ -937,8 +937,8 @@ repository:
   basic-type:
     begin: '((?i)(?<=\b)(?<![\&\.])specialize\s+)?(\^\s*)?(?=&?[a-zA-Z_])'
     beginCaptures:
-      1: { name: keyword.pascal }
-      2: { name: keyword.operator.pascal }
+      1: {name: keyword.pascal}
+      2: {name: keyword.operator.pascal}
     end: '(?<=[\w>])(?!<)'
     patterns:
       - include: "#generic-args"
@@ -948,17 +948,17 @@ repository:
   type.routine:
     begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(function|procedure)'
     beginCaptures:
-      1: { name: keyword.pascal }
+      1: {name: keyword.pascal}
     end: '((?:(?i)(?<!(?<!\.)\.|\&)(?<=\b)(?:is\s+nested|of\s+object))?)(?=\s*;)'
     endCaptures:
-      1: { name: keyword.other.pascal }
+      1: {name: keyword.other.pascal}
     patterns:
       - include: "#empty"
       - include: "#routine-params"
       - begin: '((?:&?[a-zA-Z_]\w*\s*)?)(:)'
         beginCaptures:
-          1: { name: variable.pascal }
-          2: { name: operator.pascal }
+          1: {name: variable.pascal}
+          2: {name: operator.pascal}
         end: '(?=(?:(?i)(?<!(?<!\.)\.|\&)(?<=\b)(?:is\s+nested|of\s+object))?\s*;)'
         patterns:
           - include: "#empty"
@@ -968,11 +968,11 @@ repository:
   type.sized-string:
     begin: '(?i)(?<=\b)(string)\s*(\[)'
     beginCaptures:
-      1: { name: entity.name.type.pascal }
-      2: { name: punctuation.definition.subscript.begin.pascal }
+      1: {name: entity.name.type.pascal}
+      2: {name: punctuation.definition.subscript.begin.pascal}
     end: '\]'
     endCaptures:
-      0: { name: punctuation.definition.subscript.end.pascal }
+      0: {name: punctuation.definition.subscript.end.pascal}
     patterns:
       - include: "#empty"
       - include: "#constants"
@@ -983,16 +983,16 @@ repository:
   type.array:
     begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)((?:(?:bit)?packed\s+)?array)(?=\b)'
     beginCaptures:
-      1: { name: keyword.pascal }
+      1: {name: keyword.pascal}
     end: '(?i)(?<!(?:(?<!(?<!\.)\.|\&)\b(?:array|of)|\])\s*)'
     patterns:
       - include: "#empty"
       - begin: '\['
         beginCaptures:
-          0: { name: punctuation.definition.subscript.begin.pascal }
+          0: {name: punctuation.definition.subscript.begin.pascal}
         end: '\]'
         endCaptures:
-          0: { name: punctuation.definition.subscript.end.pascal }
+          0: {name: punctuation.definition.subscript.end.pascal}
         patterns:
           - include: "#empty"
           - include: "#constants"
@@ -1023,7 +1023,7 @@ repository:
           - include: "#invalid"
       - begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)of(?=\b)'
         beginCaptures:
-          0: { name: keyword.pascal }
+          0: {name: keyword.pascal}
         end: '(?i)(?<!(?:(?<!(?<!\.)\.|\&)\b(?:array|of)|\])\s*)'
         patterns:
           - include: "#empty"
@@ -1035,13 +1035,13 @@ repository:
   type.set:
     begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(set)(?=\b)'
     beginCaptures:
-      1: { name: keyword.pascal }
+      1: {name: keyword.pascal}
     end: '(?i)(?<!(?<!(?<!\.)\.|\&)\b(?:set|of)\s*)'
     patterns:
       - include: "#empty"
       - begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)of(?=\b)'
         beginCaptures:
-          0: { name: keyword.pascal }
+          0: {name: keyword.pascal}
         end: '(?i)(?<!(?<!(?<!\.)\.|\&)\b(?:set|of)\s*)'
         patterns:
           - include: "#empty"
@@ -1053,13 +1053,13 @@ repository:
   type.file:
     begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(file)(?=\b)'
     beginCaptures:
-      1: { name: keyword.pascal }
+      1: {name: keyword.pascal}
     end: '(?i)(?<!(?<!(?<!\.)\.|\&)\b(?:file|of)\s*)|(?=[;)>])'
     patterns:
       - include: "#empty"
       - begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)of(?=\b)'
         beginCaptures:
-          0: { name: keyword.pascal }
+          0: {name: keyword.pascal}
         end: '(?i)(?<!(?<!(?<!\.)\.|\&)\b(?:file|of)\s*)|(?=[;)>])'
         patterns:
           - include: "#empty"
@@ -1073,10 +1073,10 @@ repository:
   generic-params:
     begin: '(?<=\w)<(?!\s*[=<>(])'
     beginCaptures:
-      0: { name: punctuation.definition.parameters.begin.pascal }
+      0: {name: punctuation.definition.parameters.begin.pascal}
     end: ">"
     endCaptures:
-      0: { name: punctuation.definition.parameters.end.pascal }
+      0: {name: punctuation.definition.parameters.end.pascal}
     patterns:
       - include: "#empty"
       - include: "#colon"
@@ -1096,15 +1096,15 @@ repository:
       - include: "#type.file"
       - include: "#basic-type"
 
-  #== OOP ==
+  # == OOP ==
 
   oop.visibility.strict-private:
     begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)strict(?=\b)'
     beginCaptures:
-      0: { name: keyword.modifier.pascal }
+      0: {name: keyword.modifier.pascal}
     end: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)private(?=\b)'
     endCaptures:
-      0: { name: keyword.modifier.pascal }
+      0: {name: keyword.modifier.pascal}
     patterns:
       - include: "#empty"
       - include: "#invalid"
@@ -1116,10 +1116,10 @@ repository:
   oop.visibility.strict-private-protected:
     begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)strict(?=\b)'
     beginCaptures:
-      0: { name: keyword.modifier.pascal }
+      0: {name: keyword.modifier.pascal}
     end: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(?:private|protected)(?=\b)'
     endCaptures:
-      0: { name: keyword.modifier.pascal }
+      0: {name: keyword.modifier.pascal}
     patterns:
       - include: "#empty"
       - include: "#invalid"
@@ -1147,21 +1147,21 @@ repository:
   oop.property:
     begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(?:class\s+)?property(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?=;(?!\s*(?:read|write|index|stored|implements|(?:no)?default)\b))'
     patterns:
       - include: "#empty"
       - begin: '&?[a-zA-Z_]\w*'
         beginCaptures:
-          0: { name: variable.pascal }
+          0: {name: variable.pascal}
         end: '(?=;(?!\s*(?:read|write|index|stored|implements|(?:no)?default)\b))' # FIX
         patterns:
           - begin: '\['
             beginCaptures:
-              0: { name: punctuation.definition.subscript.begin.pascal }
+              0: {name: punctuation.definition.subscript.begin.pascal}
             end: '\]'
             endCaptures:
-              0: { name: punctuation.definition.subscript.end.pascal }
+              0: {name: punctuation.definition.subscript.end.pascal}
             patterns:
               - include: "#empty"
               - include: "#comma"
@@ -1172,12 +1172,12 @@ repository:
                 name: variable.parameter.pascal
               - match: '(?i)(:)\s*(array\s+of\s+const)(?=\s*[;)\]])'
                 captures:
-                  1: { name: operator.pascal }
-                  2: { name: keyword.pascal }
+                  1: {name: operator.pascal}
+                  2: {name: keyword.pascal}
               - include: "#type-anno"
               - begin: "="
                 beginCaptures:
-                  0: { name: operator.pascal }
+                  0: {name: operator.pascal}
                 end: '(?=\s*[;)\]])'
                 patterns:
                   - include: "#empty"
@@ -1186,7 +1186,7 @@ repository:
           - include: "#type-anno"
           - begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(?:read|write)(?=\b)'
             beginCaptures:
-              0: { name: keyword.pascal }
+              0: {name: keyword.pascal}
             end: '(?i)(?=(?<!(?<!\.)\.|\&)(?<=\b)(?:read|write|index|stored|implements|(?:no)?default)\b|;)'
             patterns:
               - include: "#empty"
@@ -1195,16 +1195,16 @@ repository:
               - include: "#invalid"
           - begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)index(?=\b)'
             beginCaptures:
-              0: { name: keyword.pascal }
+              0: {name: keyword.pascal}
             end: '\d+'
             endCaptures:
-              0: { name: constant.numeric.pascal }
+              0: {name: constant.numeric.pascal}
             patterns:
               - include: "#empty"
               - include: "#invalid"
           - begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)stored(?=\b)'
             beginCaptures:
-              0: { name: keyword.pascal }
+              0: {name: keyword.pascal}
             end: '(?i)(?=(?<!(?<!\.)\.|\&)(?<=\b)(?:read|write|index|stored|implements|(?:no)?default)\b|;)'
             patterns:
               - include: "#empty"
@@ -1213,7 +1213,7 @@ repository:
               - include: "#invalid"
           - begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)implements(?=\b)'
             beginCaptures:
-              0: { name: keyword.pascal }
+              0: {name: keyword.pascal}
             end: '(?i)(?=(?<!(?<!\.)\.|\&)(?<=\b)(?:read|write|index|stored|implements|(?:no)?default)\b|;)'
             patterns:
               - include: "#empty"
@@ -1222,7 +1222,7 @@ repository:
               - include: "#invalid"
           - begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)default(?=\b)'
             beginCaptures:
-              0: { name: keyword.pascal }
+              0: {name: keyword.pascal}
             end: '(?i)(?=(?<!(?<!\.)\.|\&)(?<=\b)(?:read|write|index|stored|implements|(?:no)?default)\b|;)'
             patterns:
               - include: "#empty"
@@ -1239,14 +1239,13 @@ repository:
   oop.inheritance:
     begin: '(?i)(?<=\b(?:object|class(?:\s+(?:sealed|abstract))?|objcclass(?:\s+external)?|interface|(?:class|record|type)\s+helper)\s*)\('
     beginCaptures:
-      0: { name: punctuation.definition.paren.begin.pascal }
+      0: {name: punctuation.definition.paren.begin.pascal}
     end: '\)'
     endCaptures:
-      0: { name: punctuation.definition.paren.end.pascal }
+      0: {name: punctuation.definition.paren.end.pascal}
     patterns:
       - include: "#empty"
-      - # Unsure if this is still needed?
-        match: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)specialize(?=\b)'
+      - match: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)specialize(?=\b)'
         name: keyword.pascal
       - include: "#type"
       - include: "#comma"
@@ -1283,12 +1282,12 @@ repository:
       - include: "#semicolon"
       - include: "#invalid"
 
-  #== DECLS ==
+  # == DECLS ==
 
   var-decl:
     begin: '&?[a-zA-Z_]\w*'
     beginCaptures:
-      0: { name: variable.pascal }
+      0: {name: variable.pascal}
     end: |-
       (?xi);|(?=\b(?:
         (?:thread|class\s+)?var|const|type|resourcestring
@@ -1302,7 +1301,7 @@ repository:
         |asm|assembler
       )\b)
     endCaptures:
-      0: { name: punctuation.terminator.pascal }
+      0: {name: punctuation.terminator.pascal}
     patterns:
       - include: "#empty"
       - match: '&?[a-zA-Z_]\w*'
@@ -1315,10 +1314,10 @@ repository:
     patterns:
       - begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(?:(?:bit)?packed\s+)?record(?!\s+helper\b)(?=\b)'
         beginCaptures:
-          0: { name: keyword.pascal }
+          0: {name: keyword.pascal}
         end: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)end(?=\b)'
         endCaptures:
-          0: { name: keyword.pascal }
+          0: {name: keyword.pascal}
         patterns:
           - include: "#empty"
           - include: "#~case"
@@ -1337,26 +1336,26 @@ repository:
       ~case:
         begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(case)\b'
         beginCaptures:
-          1: { name: keyword.pascal }
+          1: {name: keyword.pascal}
         end: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(?=end\b)|(?=\))'
         patterns:
           - include: "#empty"
           - match: '(&?[a-zA-Z_]\w*)\s*(:)'
             captures:
-              1: { name: variable.pascal }
-              2: { name: operator.pascal }
+              1: {name: variable.pascal}
+              2: {name: operator.pascal}
           - begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(of)\b'
             beginCaptures:
-              1: { name: keyword.pascal }
+              1: {name: keyword.pascal}
             end: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(?=end\b)|(?=\))'
             patterns:
               - include: "#empty"
               - include: "#constants"
               - match: '(?<=\b)([a-zA-Z_]\w*)(\.)(&?[a-zA-Z_]\w*)(?!\.(?!\.))(?=\b)'
                 captures:
-                  1: { name: entity.name.type.pascal }
-                  2: { name: operator.pascal }
-                  3: { name: constant.language.pascal }
+                  1: {name: entity.name.type.pascal}
+                  2: {name: operator.pascal}
+                  3: {name: constant.language.pascal}
               - include: "#operators"
               - include: "#const-name"
               - include: "#semicolon"
@@ -1365,10 +1364,10 @@ repository:
               - patterns:
                   - begin: '\('
                     beginCaptures:
-                      0: { name: punctuation.definition.paren.begin.pascal }
+                      0: {name: punctuation.definition.paren.begin.pascal}
                     end: '\)'
                     endCaptures:
-                      0: { name: punctuation.definition.paren.end.pascal }
+                      0: {name: punctuation.definition.paren.end.pascal}
                     patterns:
                       - include: "#empty"
                       - include: "#~case"
@@ -1379,7 +1378,7 @@ repository:
                   ~var-decl:
                     begin: '&?[a-zA-Z_]\w*'
                     beginCaptures:
-                      0: { name: variable.pascal }
+                      0: {name: variable.pascal}
                     end: "(?=[;)>])"
                     patterns:
                       - include: "#empty"
@@ -1388,7 +1387,7 @@ repository:
                       - include: "#comma"
                       - begin: ":"
                         beginCaptures:
-                          0: { name: operator.pascal }
+                          0: {name: operator.pascal}
                         end: '(?<!:\s*)'
                         patterns:
                           - include: "#empty"
@@ -1404,22 +1403,22 @@ repository:
   enum-decl:
     begin: '\('
     beginCaptures:
-      0: { name: punctuation.definition.paren.begin.pascal }
+      0: {name: punctuation.definition.paren.begin.pascal}
     end: '\)'
     endCaptures:
-      0: { name: punctuation.definition.paren.end.pascal }
+      0: {name: punctuation.definition.paren.end.pascal}
     patterns:
       - include: "#empty"
       - include: "#comma"
       - begin: '&?[a-zA-Z_]\w*'
         beginCaptures:
-          0: { name: constant.language.pascal }
+          0: {name: constant.language.pascal}
         end: "(?=[,)])"
         patterns:
           - include: "#empty"
           - begin: ":?="
             beginCaptures:
-              0: { name: keyword.operator.pascal }
+              0: {name: keyword.operator.pascal}
             end: "(?=[,)])"
             patterns:
               - include: "#empty"
@@ -1432,10 +1431,10 @@ repository:
   object-decl:
     begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(?:packed\s+)?object(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)end(?=\b)'
     endCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     patterns:
       - include: "#empty"
       - include: "#oop.object-body"
@@ -1464,10 +1463,10 @@ repository:
       )
       (?=\b)
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)end(?=\b)'
     endCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     patterns:
       - include: "#empty"
       - include: "#oop.class-body"
@@ -1476,7 +1475,7 @@ repository:
   class-forward-decl:
     begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(?:objc)?class(?!\s+helper\b)(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: "(?=;)"
     patterns:
       - include: "#empty"
@@ -1486,7 +1485,7 @@ repository:
           - include: "#oop.inheritance"
       - begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)of(?=\b)'
         beginCaptures:
-          0: { name: keyword.pascal }
+          0: {name: keyword.pascal}
         end: "(?=;)"
         patterns:
           - include: "#empty"
@@ -1497,18 +1496,18 @@ repository:
   interface-decl:
     begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)interface(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)end(?=\b)'
     endCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     patterns:
       - include: "#empty"
       - begin: '(?i)(?<=(?:\binterface|\])\s*)\('
         beginCaptures:
-          0: { name: punctuation.definition.paren.begin.pascal }
+          0: {name: punctuation.definition.paren.begin.pascal}
         end: '\)'
         endCaptures:
-          0: { name: punctuation.definition.paren.end.pascal }
+          0: {name: punctuation.definition.paren.end.pascal}
         patterns:
           - include: "#empty"
           - match: '(?i)(?<!(?<!\.)\.|\&)specialize(?=\b)'
@@ -1518,10 +1517,10 @@ repository:
           - include: "#invalid"
       - begin: '(?i)(?<=(?:\binterface|\)|^)\s*)\['
         beginCaptures:
-          0: { name: punctuation.definition.uuid.begin.pascal }
+          0: {name: punctuation.definition.uuid.begin.pascal}
         end: '\]'
         endCaptures:
-          0: { name: punctuation.definition.uuid.end.pascal }
+          0: {name: punctuation.definition.uuid.end.pascal}
         patterns:
           - include: "#empty"
           - include: "#constants"
@@ -1547,16 +1546,16 @@ repository:
   helper-decl:
     begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(?:class|record|type)\s+helper(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)end(?=\b)'
     endCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     patterns:
       - include: "#empty"
       - include: "#oop.inheritance"
       - begin: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)for(?=\b)'
         beginCaptures:
-          0: { name: keyword.pascal }
+          0: {name: keyword.pascal}
         end: '(?i)(?<!(?<!\.)\.|\&)(?<=\b)(?=end\b)'
         patterns:
           - include: "#empty"
@@ -1583,12 +1582,12 @@ repository:
       - include: "#enum-range-decl"
       - include: "#helper-decl"
 
-  #== SECTIONS ==
+  # == SECTIONS ==
 
   types-section:
     begin: '(?i)(?<=\b)(type)(?=\b)'
     beginCaptures:
-      1: { name: keyword.pascal }
+      1: {name: keyword.pascal}
     end: |-
       (?xi)(?=\b(?:
         (?:thread|class\s+)?var|const|type|resourcestring
@@ -1605,17 +1604,17 @@ repository:
       - include: "#empty"
       - begin: '(?i)(?<!\.)(?:(?=\s*&)|(?<=\b))((?:generic\s+)?)(&?[a-zA-Z_]\w*)'
         beginCaptures:
-          1: { name: keyword.pascal }
-          2: { name: entity.name.type.pascal }
+          1: {name: keyword.pascal}
+          2: {name: entity.name.type.pascal}
         end: ";"
         endCaptures:
-          0: { name: punctuation.terminator.pascal }
+          0: {name: punctuation.terminator.pascal}
         patterns:
           - include: "#empty"
           - include: "#generic-params"
           - begin: "="
             beginCaptures:
-              0: { name: operator.pascal }
+              0: {name: operator.pascal}
             end: "(?=;)"
             patterns:
               - include: "#empty"
@@ -1629,7 +1628,7 @@ repository:
   vars-section:
     begin: '(?i)(?<=\b)(?:thread)?var(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: |-
       (?xi)(?=\b(?:
         (?:thread|class\s+)?var|const|type|resourcestring
@@ -1646,16 +1645,16 @@ repository:
       - include: "#empty"
       - begin: '(?i)external(?=\b)'
         beginCaptures:
-          0: { name: keyword.modifier.pascal }
+          0: {name: keyword.modifier.pascal}
         end: ";"
         endCaptures:
-          0: { name: punctuation.terminator.pascal }
+          0: {name: punctuation.terminator.pascal}
         patterns:
           - include: "#empty"
           - include: "#constants.string"
           - begin: '(?i)name(?=\b)'
             beginCaptures:
-              0: { name: keyword.modifier.pascal }
+              0: {name: keyword.modifier.pascal}
             end: "(?=;)"
             patterns:
               - include: "#empty"
@@ -1664,15 +1663,15 @@ repository:
           - include: "#invalid"
       - begin: '(?i)(?:public|export)(?=\b)'
         beginCaptures:
-          0: { name: keyword.modifier.pascal }
+          0: {name: keyword.modifier.pascal}
         end: ";"
         endCaptures:
-          0: { name: punctuation.terminator.pascal }
+          0: {name: punctuation.terminator.pascal}
         patterns:
           - include: "#empty"
           - begin: '(?i)name(?=\b)'
             beginCaptures:
-              0: { name: keyword.modifier.pascal }
+              0: {name: keyword.modifier.pascal}
             end: "(?=;)"
             patterns:
               - include: "#empty"
@@ -1681,24 +1680,24 @@ repository:
           - include: "#invalid"
       - begin: '(?i)cvar(?=\b)'
         beginCaptures:
-          0: { name: keyword.modifier.pascal }
+          0: {name: keyword.modifier.pascal}
         end: ";"
         endCaptures:
-          0: { name: punctuation.terminator.pascal }
+          0: {name: punctuation.terminator.pascal}
         patterns:
           - include: "#empty"
           - include: "#invalid"
       - begin: '&?[a-zA-Z_]\w*'
         beginCaptures:
-          0: { name: variable.pascal }
+          0: {name: variable.pascal}
         end: ";"
         endCaptures:
-          0: { name: punctuation.terminator.pascal }
+          0: {name: punctuation.terminator.pascal}
         patterns:
           - include: "#empty"
           - begin: '(?i)absolute(?=\b)'
             beginCaptures:
-              0: { name: keyword.modifier.pascal }
+              0: {name: keyword.modifier.pascal}
             end: "(?=;)"
             patterns:
               - include: "#empty"
@@ -1712,7 +1711,7 @@ repository:
           - include: "#type-anno"
           - begin: "="
             beginCaptures:
-              0: { name: operator.pascal }
+              0: {name: operator.pascal}
             end: '(?=\s*[;)])'
             patterns:
               - include: "#empty"
@@ -1724,7 +1723,7 @@ repository:
   consts-section:
     begin: '(?i)(?<=\b)const(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: |-
       (?xi)(?=\b(?:
         (?:thread|class\s+)?var|const|type|resourcestring
@@ -1741,16 +1740,16 @@ repository:
       - include: "#empty"
       - begin: '&?[a-zA-Z_]\w*'
         beginCaptures:
-          0: { name: constant.language.pascal }
+          0: {name: constant.language.pascal}
         end: ";"
         endCaptures:
-          0: { name: punctuation.terminator.pascal }
+          0: {name: punctuation.terminator.pascal}
         patterns:
           - include: "#empty"
           - include: "#type-anno"
           - begin: "="
             beginCaptures:
-              0: { name: operator.pascal }
+              0: {name: operator.pascal}
             end: "(?=;)"
             patterns:
               - include: "#empty"
@@ -1762,7 +1761,7 @@ repository:
   resourcestrings-section:
     begin: '(?i)(?<=\b)resourcestring(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: |-
       (?xi)(?=\b(?:
         (?:thread)?var|const|type|resourcestring
@@ -1779,15 +1778,15 @@ repository:
       - include: "#empty"
       - begin: '&?[a-zA-Z_]\w*'
         beginCaptures:
-          0: { name: constant.language.pascal }
+          0: {name: constant.language.pascal}
         end: ";"
         endCaptures:
-          0: { name: punctuation.terminator.pascal }
+          0: {name: punctuation.terminator.pascal}
         patterns:
           - include: "#empty"
           - begin: "="
             beginCaptures:
-              0: { name: operator.pascal }
+              0: {name: operator.pascal}
             end: "(?=;)"
             patterns:
               - include: "#empty"
@@ -1799,21 +1798,21 @@ repository:
   property-section:
     begin: '(?i)(?<=\b)property(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: "(?=;)"
     patterns:
       - include: "#empty"
       - begin: '&?[a-zA-Z_]\w*'
         beginCaptures:
-          0: { name: variable.pascal }
+          0: {name: variable.pascal}
         end: "(?=;)"
         patterns:
           - begin: '\['
             beginCaptures:
-              0: { name: punctuation.definition.subscript.begin.pascal }
+              0: {name: punctuation.definition.subscript.begin.pascal}
             end: '\]'
             endCaptures:
-              0: { name: punctuation.definition.subscript.end.pascal }
+              0: {name: punctuation.definition.subscript.end.pascal}
             patterns:
               - include: "#empty"
               - include: "#comma"
@@ -1824,12 +1823,12 @@ repository:
                 name: variable.parameter.pascal
               - match: '(?i)(:)\s*(array\s+of\s+const)(?=\s*[;)\]])'
                 captures:
-                  1: { name: operator.pascal }
-                  2: { name: keyword.pascal }
+                  1: {name: operator.pascal}
+                  2: {name: keyword.pascal}
               - include: "#type-anno"
               - begin: "="
                 beginCaptures:
-                  0: { name: operator.pascal }
+                  0: {name: operator.pascal}
                 end: '(?=\s*[;)\]])'
                 patterns:
                   - include: "#empty"
@@ -1838,7 +1837,7 @@ repository:
           - include: "#type-anno"
           - begin: '(?i)(?:read|write)(?=\b)'
             beginCaptures:
-              0: { name: keyword.pascal }
+              0: {name: keyword.pascal}
             end: '(?i)(?=(?:read|write|index|(?:no)?default)\b|;)'
             patterns:
               - include: "#empty"
@@ -1847,16 +1846,16 @@ repository:
               - include: "#invalid"
           - begin: '(?i)index(?=\b)'
             beginCaptures:
-              0: { name: keyword.pascal }
+              0: {name: keyword.pascal}
             end: '\d+'
             endCaptures:
-              0: { name: constant.numeric.pascal }
+              0: {name: constant.numeric.pascal}
             patterns:
               - include: "#empty"
               - include: "#invalid"
           - begin: '(?i)default(?=\b)'
             beginCaptures:
-              0: { name: keyword.pascal }
+              0: {name: keyword.pascal}
             end: '(?i)(?=(?:read|write|index|(?:no)?default)\b|;)'
             patterns:
               - include: "#empty"
@@ -1872,16 +1871,16 @@ repository:
   uses-section:
     begin: '(?i)(?<=\b)uses(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: ";"
     endCaptures:
-      0: { name: punctuation.terminator.pascal }
+      0: {name: punctuation.terminator.pascal}
     patterns:
       - include: "#empty"
       - include: "#comma"
       - begin: '(?i)in(?=\b)'
         beginCaptures:
-          0: { name: keyword.pascal }
+          0: {name: keyword.pascal}
         end: "(?<=')"
         patterns:
           - include: "#empty"
@@ -1894,10 +1893,10 @@ repository:
   exports-section:
     begin: '(?i)(?<=\b)exports(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: ";"
     endCaptures:
-      0: { name: punctuation.terminator.pascal }
+      0: {name: punctuation.terminator.pascal}
     patterns:
       - include: "#empty"
       - include: "#comma"
@@ -1909,10 +1908,10 @@ repository:
   labels-section:
     begin: '(?i)(?<=\b)label(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: ";"
     endCaptures:
-      0: { name: punctuation.terminator.pascal }
+      0: {name: punctuation.terminator.pascal}
     patterns:
       - include: "#empty"
       - include: "#comma"
@@ -1923,7 +1922,7 @@ repository:
   interface-section:
     begin: '(?i)(?<=\b)interface(?!\s*\()(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)(?<=\b)(?=implementation\b)'
     patterns:
       - include: "#empty"
@@ -1933,7 +1932,7 @@ repository:
   implementation-section:
     begin: '(?i)(?<=\b)implementation(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)(?<=\b)(?=(?:initialization|finalization|end)\b)'
     patterns:
       - include: "#empty"
@@ -1944,7 +1943,7 @@ repository:
   initialization-section:
     begin: '(?i)(?<=\b)initialization(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)(?<=\b)(?=(?:finalization|end)\b)'
     patterns:
       - include: "#statements"
@@ -1953,36 +1952,36 @@ repository:
   finalization-section:
     begin: '(?i)(?<=\b)finalization(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)(?<=\b)(?=end\b)'
     patterns:
       - include: "#statements"
       - include: "#invalid"
 
-  #== MAIN ==
+  # == MAIN ==
 
   unit:
     begin: '(?i)(?<=\b)unit(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)(?<=\b)end(?=\s*(?:(?:\(\*(?:\*+(?!\))|[^*]+)*\*\)|\{[^\{\}]*\})\s*)*)'
     endCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     patterns:
       - include: "#empty"
       - match: '(&?[a-zA-Z_]\w*)(\.)'
         captures:
-          1: { name: entity.name.type.pascal }
-          2: { name: keyword.operator.pascal }
+          1: {name: entity.name.type.pascal}
+          2: {name: keyword.operator.pascal}
       - begin: '&?[a-zA-Z_]\w*'
         beginCaptures:
-          0: { name: entity.name.type.pascal }
+          0: {name: entity.name.type.pascal}
         end: '(?i)(?=end\s*(?:(?:\(\*(?:\*+(?!\))|[^*]+)*\*\)|\{[^\{\}]*\})\s*)*\.)'
         patterns:
           - include: "#empty"
           - begin: ";"
             beginCaptures:
-              0: { name: punctuation.terminator.pascal }
+              0: {name: punctuation.terminator.pascal}
             end: '(?i)(?=end\s*(?:(?:\(\*(?:\*+(?!\))|[^*]+)*\*\)|\{[^\{\}]*\})\s*)*\.)'
             patterns:
               - include: "#empty"
@@ -1997,24 +1996,24 @@ repository:
   program:
     begin: '(?i)(?<=\b)program(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)(?<=\bend\s*)\.'
     endCaptures:
-      0: { name: keyword.operator.pascal }
+      0: {name: keyword.operator.pascal}
     patterns:
       - include: "#empty"
       - begin: '&?[a-zA-Z_]\w*'
         beginCaptures:
-          0: { name: entity.name.type.pascal }
+          0: {name: entity.name.type.pascal}
         end: '(?i)(?<=\bend\s*)(?=\.)'
         patterns:
           - include: "#empty"
           - begin: '\('
             beginCaptures:
-              0: { name: punctuation.definition.paren.begin.pascal }
+              0: {name: punctuation.definition.paren.begin.pascal}
             end: '\)'
             endCaptures:
-              0: { name: punctuation.definition.paren.end.pascal }
+              0: {name: punctuation.definition.paren.end.pascal}
             patterns:
               - include: "#empty"
               - include: "#comma"
@@ -2022,7 +2021,7 @@ repository:
               - include: "#invalid"
           - begin: ";"
             beginCaptures:
-              0: { name: punctuation.terminator.pascal }
+              0: {name: punctuation.terminator.pascal}
             end: '(?i)(?<=\bend\s*)(?=\.)'
             patterns:
               - include: "#empty"
@@ -2034,24 +2033,24 @@ repository:
   library:
     begin: '(?i)(?<=\b)library(?=\b)'
     beginCaptures:
-      0: { name: keyword.pascal }
+      0: {name: keyword.pascal}
     end: '(?i)(?<=\bend\s*)\.'
     endCaptures:
-      0: { name: keyword.operator.pascal }
+      0: {name: keyword.operator.pascal}
     patterns:
       - include: "#empty"
       - begin: '&?[a-zA-Z_]\w*'
         beginCaptures:
-          0: { name: entity.name.type.pascal }
+          0: {name: entity.name.type.pascal}
         end: '(?i)(?<=\bend\s*)(?=\.)'
         patterns:
           - include: "#empty"
           - begin: '\('
             beginCaptures:
-              0: { name: punctuation.definition.paren.begin.pascal }
+              0: {name: punctuation.definition.paren.begin.pascal}
             end: '\)'
             endCaptures:
-              0: { name: punctuation.definition.paren.end.pascal }
+              0: {name: punctuation.definition.paren.end.pascal}
             patterns:
               - include: "#empty"
               - include: "#comma"
@@ -2059,7 +2058,7 @@ repository:
               - include: "#invalid"
           - begin: ";"
             beginCaptures:
-              0: { name: punctuation.terminator.pascal }
+              0: {name: punctuation.terminator.pascal}
             end: '(?i)(?<=\bend\s*)(?=\.)'
             patterns:
               - include: "#empty"

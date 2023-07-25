@@ -16,12 +16,6 @@
   "bugs": {
     "url": "https://github.com/JuanM04/unlp-vscode/issues"
   },
-  "categories": [
-    "Programming Languages",
-    "Snippets",
-    "Education",
-    "Other"
-  ],
   "keywords": [
     "pascal",
     "free pascal",
@@ -35,6 +29,12 @@
     "unlp",
     "universidad nacional de la plata",
     "argentina"
+  ],
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Education",
+    "Other"
   ],
   "main": "./dist/index.js",
   "icon": "static/icon.png",
