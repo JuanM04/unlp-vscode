@@ -44,5 +44,8 @@ patterns:
   - name: punctuation.asm.vonsim
     match: ([\(\),\[\]])
 
+  - name: string.quoted.single.asm.vonsim
+    match: ('[^']')
+
   - name: string.quoted.double.asm.vonsim
     match: ("[^"]*")
