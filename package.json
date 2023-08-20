@@ -95,7 +95,11 @@
           ".vonsim",
           ".asm"
         ],
-        "configuration": "./syntaxes/vonsim.configuration.json"
+        "configuration": "./syntaxes/vonsim.configuration.json",
+        "icon": {
+          "light": "./static/vonsim.svg",
+          "dark": "./static/vonsim.svg"
+        }
       },
       {
         "id": "mips",
