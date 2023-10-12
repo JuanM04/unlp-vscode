@@ -7,10 +7,11 @@ Paquete de utilidades para la UNLP (Facultad de Ingeniería e Informática)
 ## Utilidades
 
 - Soporte para Pascal (archivos `.pas` y `.pp`)
+- Soporte para Qplanif (archivos `.def`)
 - Soporte para R-Info (archivos `.ri` y `.rinfo`)
 - Soporte para [VonSim](https://vonsim.github.io) y MSX88 (archivos `.vonsim` y `.asm`)
 - Soporte para [WinMIPS64](http://indigo.ie/~mscott/) (archivos `.mips` y `.s`)
-- Integración con Markdown (`pascal|pas|pp`, `rinfo`, `vonsim` y `mips`)
+- Integración con Markdown (`pascal|pas|pp`, `qplanif`, `rinfo`, `vonsim` y `mips`)
 
 [**¡Contribuí con el proyecto!**](https://github.com/JuanM04/unlp-vscode/blob/main/CONTRIBUTING.md)
 

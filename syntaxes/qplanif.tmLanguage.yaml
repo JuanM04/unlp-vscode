@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json
+
+name: Qplanif
+scopeName: source.qplanif
+uuid: 84f4850d-0490-4489-ae6a-3798fcac7467
+fileTypes:
+  - "def"
+
+patterns:
+  - name: comment.line.qplanif
+    match: "#.*$"
+
+  - name: keyword.other.qplanif
+    match: ^(RECURSO|TAREA)\b
+
+  - name: variable.parameter.qplanif
+    match: \b(INICIO|PERIODO|PRIORIDAD)\b
+
+  - name: constant.other.qplanif
+    match: \b(CPU)\b
+
+  - name: constant.numeric.integer.decimal.qplanif
+    match: \b(\d+)\b
+
+  - name: punctuation.qplanif
+    match: ([,\[\]=])
+
+  - name: string.quoted.double.qplanif
+    match: ("[^"]*")

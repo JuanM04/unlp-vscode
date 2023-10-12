@@ -26,6 +26,7 @@
     "vonsim",
     "r-info",
     "rinfo",
+    "qplanif",
     "unlp",
     "universidad nacional de la plata",
     "argentina"
@@ -73,6 +74,16 @@
           ".lpr"
         ],
         "configuration": "./syntaxes/pascal.configuration.json"
+      },
+      {
+        "id": "qplanif",
+        "aliases": [
+          "Qplanif"
+        ],
+        "extensions": [
+          ".def"
+        ],
+        "configuration": "./syntaxes/qplanif.configuration.json"
       },
       {
         "id": "r-info",
@@ -127,6 +138,21 @@
         ],
         "embeddedLanguages": {
           "meta.embedded.block.pascal": "pascal"
+        }
+      },
+      {
+        "language": "qplanif",
+        "scopeName": "source.qplanif",
+        "path": "./syntaxes/qplanif.tmLanguage.json"
+      },
+      {
+        "scopeName": "text.html.markdown.qplanif.codeblock",
+        "path": "./syntaxes/qplanif.injection.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.qplanif": "qplanif"
         }
       },
       {
