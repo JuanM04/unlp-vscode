@@ -22,14 +22,19 @@
     "fpc",
     "asm",
     "assembly",
-    "mips",
+    "msx",
+    "msx88",
+    "sx88",
     "vonsim",
+    "mips",
+    "mips64",
+    "winmips",
+    "winmips64",
     "r-info",
     "rinfo",
     "qplanif",
     "unlp",
-    "universidad nacional de la plata",
-    "argentina"
+    "universidad nacional de la plata"
   ],
   "categories": [
     "Programming Languages",
