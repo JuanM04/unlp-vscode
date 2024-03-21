@@ -1014,7 +1014,7 @@ repository:
                 | \*\*?
                 | [<>][<>=]?
                 | \.\.
-              )
+              ))
             name: constant.language.pascal
           - include: "#const-exprs"
           # - include: "#basic-type"
