@@ -4,7 +4,7 @@
   "displayName": "UNLP",
   "version": "0.4.3",
   "private": true,
-  "packageManager": "pnpm@8.6.9",
+  "packageManager": "pnpm@9.11.0",
   "description": "Paquete de utilidades para la UNLP (Facultad de Ingeniería e Informática)",
   "author": "Juan Martín Seery <me@juanm04.com>",
   "license": "MIT",
