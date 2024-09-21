@@ -1,7 +1,7 @@
 # Based on https://github.com/ALANVF/vscode-pascal-magic/blob/65bcbdf003a84fe31a604b95bcab5a0ea3b802b6/snippets/pascal.json
 # Copyright (c) 2020 theangryepicbanana - MIT License
 
-"begin...end":
+begin...end:
   prefix: begin
   description: bloque begin...end
   body: |-
@@ -9,7 +9,7 @@
       $0
     end;
 
-"programa":
+programa:
   prefix: programa
   description: Programa básico
   isFileTemplate: true
@@ -26,7 +26,7 @@
       ${0:{Programa principal}}
     end.
 
-"case...end":
+case...end:
   prefix: caseof
   description: Directiva case
   body: |-
@@ -34,106 +34,106 @@
       $0
     end;
 
-"registro (vacío)":
+registro (vacío):
   prefix: recorde
   body: |-
     T$1 = record
       $0
     end;
 
-"objeto (base)":
+objeto (base):
   prefix: objectb
   body: |-
     T$1 = object
       $0
     end;
 
-"objeto (derivado)":
+objeto (derivado):
   prefix: objectd
   body: |-
     T$1 = object($2)
       $0
     end;
 
-"clase (base)":
+clase (base):
   prefix: classb
   body: |-
     T$1 = class
       $0
     end;
 
-"clase (derivada)":
+clase (derivada):
   prefix: classd
   body: |-
     T$1 = class($2)
       $0
     end;
 
-"interfaz (base)":
+interfaz (base):
   prefix: interfaceb
   body: |-
     T$1 = interface
       $0
     end;
 
-"interfaz (derivada)":
+interfaz (derivada):
   prefix: interfaced
   body: |-
     T$1 = interface($2)
       $0
     end;
 
-"procedimiento":
+procedimiento:
   prefix: procd
   description: Declaración de un procedimiento
-  body: "procedure ${1:name}($2);$0"
+  body: 'procedure ${1:name}($2);$0'
 
-"procedimiento de clase":
+procedimiento de clase:
   prefix: cprocd
   description: Declaración de un procedimiento de clase
-  body: "class procedure ${1:name}($2);$0"
+  body: 'class procedure ${1:name}($2);$0'
 
-"función":
+función:
   prefix: funcd
   description: Declaración de una función
-  body: "function ${1:name}($2): ${3:return};$0"
+  body: 'function ${1:name}($2): ${3:return};$0'
 
-"función de clase":
+función de clase:
   prefix: cfuncd
   description: Declaración de una función de clase
-  body: "class function ${1:name}($2): ${3:return};$0"
+  body: 'class function ${1:name}($2): ${3:return};$0'
 
-"operador":
+operador:
   prefix: operd
   description: Declaración de un operador
-  body: "operator ${1:name}($2): ${3:return};$0"
+  body: 'operator ${1:name}($2): ${3:return};$0'
 
-"operador de clase":
+operador de clase:
   prefix: coperd
   description: Declaración de un operador de clase
-  body: "class operator ${1:name}($2);$0"
+  body: 'class operator ${1:name}($2);$0'
 
-"constructor":
+constructor:
   prefix: ctord
   description: Declaración de un constructor
-  body: "constructor ${1:name}($2);$0"
+  body: 'constructor ${1:name}($2);$0'
 
-"constructor de clase":
+constructor de clase:
   prefix: cctord
   description: Declaración de un constructor de clase
-  body: "class constructor ${1:name}($2);$0"
+  body: 'class constructor ${1:name}($2);$0'
 
-"destructor":
+destructor:
   prefix: dtord
   description: Declaración de un destructor
-  body: "destructor ${1:name};$0"
+  body: 'destructor ${1:name};$0'
 
-"destructor por defector":
+destructor por defector:
   prefix: ddtord
   description: Declaración del destructor por defecto
-  body: "destructor destroy; override;$0"
+  body: destructor destroy; override;$0
 
-"unidad":
+unidad:
   prefix: unitb
   description: Declaración de una unidad
   isFileTemplate: true

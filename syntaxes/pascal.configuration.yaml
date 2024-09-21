@@ -2,24 +2,24 @@
 # Copyright (c) 2020 theangryepicbanana - MIT License
 
 comments:
-  lineComment: "//"
+  lineComment: //
   blockComment: ['\{', '\}']
 
 brackets:
-  - ["(", ")"]
-  - ["[", "]"]
-  - ["{", "}"]
+  - [(, )]
+  - ['[', ']']
+  - ['{', '}']
 
 autoClosingPairs:
-  - ["(", ")"]
-  - ["[", "]"]
-  - ["{", "}"]
-  - ["'", "'"]
+  - [(, )]
+  - ['[', ']']
+  - ['{', '}']
+  - ['''', '''']
 
 surroundingPairs:
-  - ["(", ")"]
-  - ["[", "]"]
-  - ["{", "}"]
-  - ["'", "'"]
+  - [(, )]
+  - ['[', ']']
+  - ['{', '}']
+  - ['''', '''']
 
 wordPattern: '&?[a-zA-Z_]\w*'

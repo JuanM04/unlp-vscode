@@ -1,11 +1,11 @@
-"comenzar-fin":
-  prefix: "comenzar"
+comenzar-fin:
+  prefix: comenzar
   body: |-
     comenzar
       $0
     fin
 
-"Programa básico":
+Programa básico:
   prefix: programa
   description: Programa básico
   isFileTemplate: true
@@ -25,7 +25,7 @@
       Iniciar(Rinfo,1,1)
     fin
 
-"Robot":
+Robot:
   prefix: robot
   description: Estructura básica de un robot
   body: |
@@ -36,7 +36,7 @@
       $0
     fin
 
-"Proceso":
+Proceso:
   prefix: proceso
   description: Estructura básica de un proceso
   body: |

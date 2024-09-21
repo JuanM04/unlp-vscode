@@ -4,11 +4,11 @@ name: Qplanif
 scopeName: source.qplanif
 uuid: 84f4850d-0490-4489-ae6a-3798fcac7467
 fileTypes:
-  - "def"
+  - def
 
 patterns:
   - name: comment.line.qplanif
-    match: "#.*$"
+    match: '#.*$'
 
   - name: keyword.other.qplanif
     match: ^(RECURSO|TAREA)\b

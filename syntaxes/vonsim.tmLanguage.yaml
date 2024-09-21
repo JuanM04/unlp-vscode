@@ -4,8 +4,8 @@ name: VonSim
 scopeName: source.asm.vonsim
 uuid: 44a71009-6953-4657-90da-ce1a74389c35
 fileTypes:
-  - "vonsim"
-  - "asm"
+  - vonsim
+  - asm
 
 patterns:
   - name: comment.line.asm.vonsim

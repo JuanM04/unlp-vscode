@@ -4,8 +4,8 @@ name: R-Info
 scopeName: source.r-info
 uuid: e34ddfaf-9aee-4e84-a281-04eec3608111
 fileTypes:
-  - "ri"
-  - "rinfo"
+  - ri
+  - rinfo
 
 patterns:
   - name: keyword.control.r-info
@@ -45,8 +45,8 @@ patterns:
     match: ~|&
 
   - name: comment.r-info
-    begin: "{"
-    end: "}"
+    begin: '{'
+    end: '}'
 
   - match: (-)?(?:((?:\b\d+(?:\.\d*)?|\.\d+)(?:\b|e-?\d+\b)%?)|(\$[0-9]+\b))
     captures:

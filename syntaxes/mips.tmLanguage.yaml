@@ -4,8 +4,8 @@ name: MIPS
 scopeName: source.asm.mips
 uuid: 6eadd4ba-6951-41ae-a96a-aa0229491f2d
 fileTypes:
-  - "mips"
-  - "s"
+  - mips
+  - s
 
 patterns:
   - name: comment.line.asm.mips
