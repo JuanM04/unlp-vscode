@@ -20,6 +20,9 @@
     "pascal",
     "free pascal",
     "fpc",
+    "ada",
+    "adb",
+    "ads",
     "asm",
     "assembly",
     "msx",
@@ -76,6 +79,21 @@
           ".lpr"
         ],
         "configuration": "./syntaxes/pascal.configuration.json"
+      },
+      {
+        "id": "ada",
+        "aliases": [
+          "Ada",
+          "ADA",
+          "Spark",
+          "SPARK"
+        ],
+        "extensions": [
+          ".ada",
+          ".adb",
+          ".ads"
+        ],
+        "configuration": "./syntaxes/ada.configuration.json"
       },
       {
         "id": "qplanif",
@@ -140,6 +158,21 @@
         ],
         "embeddedLanguages": {
           "meta.embedded.block.pascal": "pascal"
+        }
+      },
+      {
+        "language": "ada",
+        "scopeName": "source.ada",
+        "path": "./syntaxes/ada.tmLanguage.json"
+      },
+      {
+        "scopeName": "text.html.markdown.ada.codeblock",
+        "path": "./syntaxes/ada.injection.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.ada": "ada"
         }
       },
       {

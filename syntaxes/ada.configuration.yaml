@@ -1,0 +1,37 @@
+# Based on https://github.com/ALANVF/vscode-pascal-magic/blob/65bcbdf003a84fe31a604b95bcab5a0ea3b802b6/language-configuration.json
+# Based on the "Ada" Visual Studio Code extension v1.0.0 by Entomy - https://marketplace.visualstudio.com/items?itemName=Entomy.ada
+
+comments:
+  lineComment: --
+
+brackets:
+  - [(, )]
+
+autoClosingPairs:
+  - open: (
+    close: )
+    notIn: [string, comment]
+  - open: <<
+    close: '>>'
+    notIn: [string, comment]
+  - open: ''''
+    close: ''''
+    notIn: [string, comment]
+  - open: '"'
+    close: '"'
+    notIn: [string, comment]
+
+surroundingPairs:
+  - [(, )]
+  - [<<, '>>']
+  - ['''', '''']
+  - ['"', '"']
+
+folding:
+  markers:
+    start: '(?ig)\brecord\b'
+    end: '(?ig)\bend\s+record;'
+
+indentationRules:
+  increaseIndentPattern: '(?ig)\brecord\s*$'
+  decreaseIndentPattern: '(?ig)\bend\s+record\s*;\s*$'

@@ -7,6 +7,7 @@ Paquete de utilidades para la UNLP (Facultad de Ingeniería e Informática)
 ## Utilidades
 
 - Soporte para Pascal (archivos `.pas` y `.pp`)
+- Soporte para Ada (archivos `.adb` y `.ads`)
 - Soporte para Qplanif (archivos `.def`)
 - Soporte para R-Info (archivos `.ri` y `.rinfo`)
 - Soporte para [VonSim](https://vonsim.github.io) y MSX88 (archivos `.vonsim` y `.asm`)
@@ -26,3 +27,5 @@ Una vez instalado, se pueden compilar los programas corriendo `fpc mi_programa.p
 Copyright © 2023 [Juan Martín Seery](https://github.com/JuanM04), bajo la licencia [MIT](https://github.com/JuanM04/unlp-vscode/blob/main/LICENSE).
 
 _Syntax highlighting_ para Pascal basado en [`vscode-pascal-magic` (commit 65bcbdf)](https://github.com/ALANVF/vscode-pascal-magic/tree/65bcbdf003a84fe31a604b95bcab5a0ea3b802b6). Copyright (c) 2020 theangryepicbanana, bajo la licencia [MIT](https://github.com/ALANVF/vscode-pascal-magic/blob/65bcbdf003a84fe31a604b95bcab5a0ea3b802b6/LICENSE).
+
+_Syntax highlighting_ para Ada basado en [`Entomy.ada` v1.0.0](https://marketplace.visualstudio.com/items?itemName=Entomy.ada).
