@@ -33,13 +33,13 @@ patterns:
     match: (\?)
 
   - name: constant.numeric.integer.hexadecimal.asm.vonsim
-    match: (?i)\b(\d+[\da-f]*h)\b
+    match: (?i)\b(\d+[\da-f_]*h)\b
 
   - name: constant.numeric.integer.binary.asm.vonsim
-    match: (?i)\b([01]+b)\b
+    match: (?i)\b([01][01_]*b)\b
 
   - name: constant.numeric.integer.decimal.asm.vonsim
-    match: \b(\d+)\b
+    match: \b(\d[\d_]*)\b
 
   - name: punctuation.asm.vonsim
     match: ([\(\),\[\]])
